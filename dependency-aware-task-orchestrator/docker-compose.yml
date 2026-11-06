@@ -1,0 +1,9 @@
+services:
+  api:
+    build: .
+    env_file: .env
+    ports: ['8000:8000']
+  db:
+    image: postgres:16-alpine
+    environment: {POSTGRES_USER: orchestrator,POSTGRES_PASSWORD: orchestrator,POSTGRES_DB: orchestrator}
+  redis: {image: redis:7-alpine}
